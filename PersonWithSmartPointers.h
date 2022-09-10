@@ -21,13 +21,14 @@ public:
 
 	virtual ~PersonWithSmartPointers();
 
-	void AddCardToHandPointer(std::shared_ptr<Card> c);
-
+	void AddCardToHand(std::shared_ptr<Card> c);
+	std::shared_ptr<Card> RemoveCardFromHand();
+	void PrintOutHand();
 
     private: 
         std::string m_name;
 
-        std::list<std::shared_ptr<Card>> m_stackOfCardsPointer;
-        std::list<std::shared_ptr<Card>> m_listOfCardsPointer;
+        std::list<std::shared_ptr<Card>> m_stackOfCards;
+        std::list<std::shared_ptr<Card>> m_listOfCards;
 
 };

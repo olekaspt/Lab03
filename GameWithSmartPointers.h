@@ -20,8 +20,6 @@ class GameWithSmartPointers
         std::shared_ptr<PersonWithSmartPointers> m_p2;
         std::shared_ptr<PersonWithSmartPointers> m_p3;
         std::shared_ptr<DeckWithSmartPointers> m_deck;
-        std::list<std::shared_ptr<PersonWithSmartPointers>> stackOfPeople;
-        std::list<std::shared_ptr<PersonWithSmartPointers>> queueOfPeople;
         void PrintOutQueueOfPeople();
         void PrintOutStackOfPeople();
 

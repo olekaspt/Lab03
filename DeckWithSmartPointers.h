@@ -14,6 +14,8 @@ class DeckWithSmartPointers
         std::shared_ptr<Card> DrawCard();
         void ReturnCard(std::shared_ptr<Card> c);
 
+        void PrintDeck();
+
     private:
 
         std::list<std::shared_ptr<Card>> m_deck;

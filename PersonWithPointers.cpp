@@ -18,12 +18,31 @@ std::string PersonWithPointers::GetName() const
 PersonWithPointers::~PersonWithPointers()
 {
     std::cout << "Deleting PersonWithObjects" << m_name << std::endl;
-    // TODO need to iterate and delete the pointers if you decide the person owns the Cards
+    for(auto it = m_listOfCards.begin(); it != m_listOfCards.end(); it++)
+    {
+        delete *it;
+    }
+    m_listOfCards.clear();
 }
 
-void PersonWithPointers::AddCardToHandPointer( Card * c)  
+void PersonWithPointers::AddCardToHand( Card * c)  
 {
-    std::cout<<"   AddCardToHandPointer :"<<c->GetValue()<<" "<<c->GetSuit()<<std::endl;
-    m_listOfCardsPointer.push_front(c);
+    std::cout<<"   AddCardToHandPointer :"<<c->GetValue()<<" "<<c->GetSuit()<<" "<<c->GetGuid()<<std::endl;
+    m_listOfCards.push_front(c);
 }
 
+Card * PersonWithPointers::RemoveCardFromHand()
+{
+    Card * retVal = m_listOfCards.front();
+    m_listOfCards.pop_front();
+    return retVal;
+
+}
+
+void PersonWithPointers::PrintOutHand()
+{
+    for(auto it = m_listOfCards.begin(); it != m_listOfCards.end(); it++)
+    {
+        std::cout<<"   AddCardToHandPointer :"<<(*it)->GetValue()<<" "<<(*it)->GetSuit()<<" "<<(*it)->GetGuid()<<std::endl;
+    }
+}

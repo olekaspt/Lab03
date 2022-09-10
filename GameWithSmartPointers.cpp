@@ -19,77 +19,54 @@ GameWithSmartPointers::~GameWithSmartPointers()
 
 }
 
-void GameWithSmartPointers::PrintOutQueueOfPeople()
-{
-    for ( auto it1queue = queueOfPeople.begin();
-         it1queue != queueOfPeople.end(); it1queue++)
-    {
-
-        std::cout << (*it1queue)->GetName() << " " << std::endl;
-    }
-
-    std::cout <<  std::endl;
-
-}
-
-void GameWithSmartPointers::PrintOutStackOfPeople()
-{
-    for ( auto it1stack = stackOfPeople.begin();
-         it1stack != stackOfPeople.end(); it1stack++)
-    {
-
-        std::cout << (*it1stack)->GetName() << " " << std::endl;
-    }
-
-    std::cout <<  std::endl;
-
-}
-
 void GameWithSmartPointers::RunGame()
 {
 
 
     std::shared_ptr<Card> card1Pointer = std::make_shared<Card> (1,1);
-    std::cout<<"Calling Pointer Version"<<std::endl;
-    m_p1->AddCardToHandPointer(card1Pointer);
-    std::cout<<"End Calling Pointer Version"<<std::endl;
+    std::cout<<"Calling Smart Pointer Version"<<std::endl;
+    m_p1->AddCardToHand(card1Pointer);
+    std::cout<<"End Calling Smart Pointer Version"<<std::endl;
 
-    //Draw a card from a deck
-    m_p1->AddCardToHandPointer(m_deck->DrawCard());
-    
-    std::cout<<std::endl<<std::endl;
+    std::cout<<"Start Drawing Cards"<<std::endl;
+    std::cout<<"Drawing Cards 1"<<std::endl;
+    m_p1->AddCardToHand(m_deck->DrawCard());
+    std::cout<<"Drawing Cards 2"<<std::endl;
+    m_p1->AddCardToHand(m_deck->DrawCard());
+    std::cout<<"Drawing Cards 3"<<std::endl;
+    m_p2->AddCardToHand(m_deck->DrawCard());
+    std::cout<<"Drawing Cards 4"<<std::endl;
+    m_p2->AddCardToHand(m_deck->DrawCard());
+    std::cout<<"Drawing Cards 5"<<std::endl;
+    m_p3->AddCardToHand(m_deck->DrawCard());
+    std::cout<<"Drawing Cards 6"<<std::endl;
+    m_p3->AddCardToHand(m_deck->DrawCard());
 
-    std::cout<<"Stack\n";
-    std::cout<<"   Push "<<m_p1->GetName()<<std::endl;
-    stackOfPeople.push_front(m_p1);
-    std::cout<<"   Push "<<m_p2->GetName()<<std::endl;
-    stackOfPeople.push_front(m_p2);
-    std::cout<<"   Push "<<m_p3->GetName()<<std::endl;
-    stackOfPeople.push_front(m_p3);
-    PrintOutStackOfPeople();
+    std::cout << "P1 Player::PrintOutHand" << std::endl;
+    m_p1->PrintOutHand();
+    std::cout << "P2 Player::PrintOutHand" << std::endl;
+    m_p2->PrintOutHand();
+    std::cout << "P4 Player::PrintOutHand" << std::endl;
+    m_p3->PrintOutHand();
+    std::cout << "End Player::PrintOutHand" << std::endl;
 
+    std::cout << "PrintDeck" << std::endl;
+    m_deck->PrintDeck();
 
-    std::cout<<"Queue\n"; 
-    std::cout<<"   Enque "<<m_p1->GetName()<<std::endl;
-    queueOfPeople.push_back(m_p1);
-    std::cout<<"   Enque "<<m_p2->GetName()<<std::endl;
-    queueOfPeople.push_back(m_p2);
-    std::cout<<"   Enque "<<m_p3->GetName()<<std::endl;
-    queueOfPeople.push_back(m_p3);
-    PrintOutQueueOfPeople();    
+    m_deck->ReturnCard(m_p1->RemoveCardFromHand());
+    m_deck->ReturnCard(m_p1->RemoveCardFromHand());
 
-    std::cout << "calling pop and Dequee" << std::endl;
-    stackOfPeople.pop_front();
-    queueOfPeople.pop_front();
+    m_deck->ReturnCard(m_p2->RemoveCardFromHand());
+    m_deck->ReturnCard(m_p3->RemoveCardFromHand());
 
-    std::cout << "Stack" << std::endl;
-    PrintOutStackOfPeople();
-
-    std::cout << "Queue" << std::endl;
-    PrintOutQueueOfPeople();
-
-    std::cout << "calling clear methods" << std::endl;
-    stackOfPeople.clear();
-    queueOfPeople.clear();
+    std::cout << "PrintDeck" << std::endl;
+    m_deck->PrintDeck();
+    std::cout << "P1 Player::PrintOutHand" << std::endl;
+    m_p1->PrintOutHand();
+    std::cout << "P2 Player::PrintOutHand" << std::endl;
+    m_p2->PrintOutHand();
+    std::cout << "P3 Player::PrintOutHand" << std::endl;
+    m_p3->PrintOutHand();
+    std::cout << "End Player::PrintOutHand" << std::endl;
 }
 

@@ -4,7 +4,9 @@
 
 DeckWithObjects::DeckWithObjects()
 {
-    for(int i = 1 ; i <=2; i++)
+    // For demo purposes reducing number of cards
+    // for(int i = 1 ; i <=13; i++)
+    for(int i = 1 ; i <=3; i++)
     {
         this->m_deck.push_back(std::move(Card(i,0)));
         this->m_deck.push_back(std::move(Card(i,1)));
@@ -42,9 +44,9 @@ void DeckWithObjects::PrintDeck()
 {
     auto it1queue = std::make_move_iterator(m_deck.begin());
     auto it1queue_end = std::make_move_iterator(m_deck.end());
-    for (int i = 0; it1queue != it1queue_end; it1queue++)
+    for (; it1queue != it1queue_end; it1queue++)
     {
-        std::cout << it1queue->GetSuit() << " " << it1queue->GetValue() << " " << std::endl;
+        std::cout << it1queue->GetSuit() << " " << it1queue->GetValue() << " " << it1queue->GetGuid()<< std::endl;
     }
     std::cout << std::endl;
 

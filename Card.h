@@ -11,10 +11,10 @@ class Card
 
 		Card( const Card &c); // Copy constructor
 		Card& operator=(const Card& c); // assignment operator
-		
+
 		int GetValue() const ;
 		int GetSuit() const ;
-
+		int GetGuid() const ;
 
 		Card(Card && obj); // Move constructor
 		Card& operator=(Card&& obj); // Move assignment operator

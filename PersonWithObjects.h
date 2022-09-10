@@ -20,14 +20,14 @@ public:
 
 	virtual ~PersonWithObjects();
 
-	void AddCardToHandObject(Card  c);
-	void AddCardToHandObject(Card& c);
+	void AddCardToHand(Card  c);
+	void AddCardToHand(Card& c);
 	Card RemoveCardFromHand();
 	void PrintOutHand();
 
     private: 
         std::string m_name;
-        std::list< Card > m_stackOfCardsObject;
-        std::list< Card > m_listOfCardsObject;
+        std::list< Card > m_stackOfCards;
+        std::list< Card > m_listOfCards;
 
 };

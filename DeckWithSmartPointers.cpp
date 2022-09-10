@@ -7,7 +7,9 @@
 DeckWithSmartPointers::DeckWithSmartPointers()
 {
 
-    for(int i = 1 ; i <=13; i++)
+    // For demo purposes reducing number of cards
+    //for(int i = 1 ; i <=13; i++)
+    for(int i = 1 ; i <=3; i++)
     {
         this->m_deck.push_back(std::make_shared<Card>(i,0));
         this->m_deck.push_back(std::make_shared<Card>(i,1));
@@ -48,3 +50,10 @@ void DeckWithSmartPointers::ReturnCard(std::shared_ptr<Card> c)
 
 }
 
+void DeckWithSmartPointers::PrintDeck()
+{
+    for(auto it = m_deck.begin(); it != m_deck.end(); it++)
+    {
+        std::cout<<"   AddCardToHandPointer :"<<(*it)->GetValue()<<" "<<(*it)->GetSuit()<<" "<<(*it)->GetGuid()<<std::endl;
+    }
+}

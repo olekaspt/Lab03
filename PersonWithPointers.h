@@ -19,13 +19,15 @@ public:
 
 	virtual ~PersonWithPointers();
 
-	void AddCardToHandPointer( Card * c);
+	void AddCardToHand( Card * c);
+	Card * RemoveCardFromHand();
+	void PrintOutHand();
 
 
     private: 
         std::string m_name;
 
-        std::list< Card *> m_stackOfCardsPointer;
-        std::list< Card *> m_listOfCardsPointer;
+        std::list< Card *> m_stackOfCards;
+        std::list< Card *> m_listOfCards;
 
 };

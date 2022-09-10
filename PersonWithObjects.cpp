@@ -22,8 +22,8 @@ PersonWithObjects::PersonWithObjects(PersonWithObjects && obj)
 {
     std::cout <<"    Calling Person Move Constructor"<<std::endl;
     this->m_name = std::move(obj.m_name);
-    this->m_listOfCardsObject = std::move(obj.m_listOfCardsObject);
-    this->m_stackOfCardsObject = std::move(obj.m_stackOfCardsObject);
+    this->m_listOfCards = std::move(obj.m_listOfCards);
+    this->m_stackOfCards = std::move(obj.m_stackOfCards);
 }
 
 
@@ -32,32 +32,32 @@ std::string PersonWithObjects::GetName() const
     return m_name;
 }
 
-void PersonWithObjects::AddCardToHandObject( Card  c)
+void PersonWithObjects::AddCardToHand( Card  c)
 {
-    std::cout<<"   AddCardToHandObject1 :"<<c.GetValue()<<" "<<c.GetSuit()<<std::endl;
-    m_listOfCardsObject.push_front(std::move(c));
+    std::cout<<"   AddCardToHandObject :"<<c.GetValue()<<" "<<c.GetSuit() << " " << c.GetGuid() << std::endl;
+    m_listOfCards.push_front(std::move(c));
 }
 
-void PersonWithObjects::AddCardToHandObject(Card & c)
+void PersonWithObjects::AddCardToHand(Card & c)
 {
-    std::cout << "   AddCardToHandObject2 :" << c.GetValue() << " " << c.GetSuit() << std::endl;
-    m_listOfCardsObject.push_front(std::move(c));
+    std::cout << "   AddCardToHandObject (by ref) :" << c.GetValue() << " " << c.GetSuit() << " " << c.GetGuid() << std::endl;
+    m_listOfCards.push_front(std::move(c));
 }
 
 Card PersonWithObjects::RemoveCardFromHand()
 {
-    Card c = std::move(m_listOfCardsObject.front());
-    m_listOfCardsObject.pop_front();
+    Card c = std::move(m_listOfCards.front());
+    m_listOfCards.pop_front();
     return std::move(c);
 }
 
 void PersonWithObjects::PrintOutHand()
 {
-    auto it1queue = std::make_move_iterator(m_listOfCardsObject.begin());
-    auto it1queue_end = std::make_move_iterator(m_listOfCardsObject.end());
+    auto it1queue = std::make_move_iterator(m_listOfCards.begin());
+    auto it1queue_end = std::make_move_iterator(m_listOfCards.end());
     for (int i = 0; it1queue != it1queue_end; it1queue++)
     {
-        std::cout << it1queue->GetSuit() << " " <<  it1queue->GetValue() << " " << std::endl;
+        std::cout << it1queue->GetSuit() << " " <<  it1queue->GetValue() << " " << it1queue->GetGuid() << " "<< std::endl;
     }
     std::cout << std::endl;
 }

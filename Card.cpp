@@ -50,7 +50,7 @@ Card& Card::operator=(Card&& obj)
 
 int Card::GetValue() const {return m_value;}
 int Card::GetSuit() const {return m_suit;}
-
+int Card::GetGuid() const {return m_guid;}
 
 
 

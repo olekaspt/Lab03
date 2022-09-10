@@ -6,8 +6,9 @@
 
 DeckWithPointers::DeckWithPointers()
 {
-
-    for(int i = 1 ; i <=13; i++)
+    // For demo purposes reducing number of cards
+    //for(int i = 1 ; i <=13; i++)
+    for(int i = 1 ; i <=3; i++)
     {
         this->m_deck.push_back(new Card(i,0));
         this->m_deck.push_back(new Card(i,1));
@@ -24,6 +25,16 @@ DeckWithPointers::~DeckWithPointers()
         delete *it;
     }
     m_deck.clear();
+}
+
+void DeckWithPointers::PrintDeck()
+{
+
+    for (auto it = m_deck.begin(); it != m_deck.end(); it++)
+    {
+        std::cout << (*it)->GetSuit() << " " << (*it)->GetValue() << " " << (*it)->GetGuid()<< std::endl;
+    }
+    std::cout << std::endl;
 }
 
 Card * DeckWithPointers::DrawCard()

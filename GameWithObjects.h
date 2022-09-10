@@ -22,6 +22,4 @@ class GameWithObjects
         PersonWithObjects m_p2;
         PersonWithObjects m_p3;
         DeckWithObjects m_deck;
-		std::list<PersonWithObjects> m_stackOfPeople;
-		std::list<PersonWithObjects> m_queueOfPeople;
 };
