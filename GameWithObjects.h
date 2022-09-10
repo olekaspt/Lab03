@@ -1,6 +1,7 @@
 #pragma once
 #include "PersonWithObjects.h"
 #include "DeckWithObjects.h"
+#include "Card.h"
 
 
 
@@ -12,6 +13,8 @@ class GameWithObjects
 		virtual ~GameWithObjects();
 
 		void RunGame();
+		void RunCheatGame();
+		void CheatingAdd(Card c);
     private:
 
 		void PrintOutQueueOfPeople();

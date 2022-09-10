@@ -39,13 +39,25 @@ void CallGameWithSmartPointers()
 	std::cout << "=========================================" << std::endl;
 }
 
+void CallGameWithCheating()
+{
+	std::cout << "=========================================" << std::endl;
+	std::cout << "GameWithSmartPointers constructed" << std::endl;
+	GameWithObjects game3;
+	std::cout << "Now Run Game" << std::endl;
+	game3.RunCheatGame();
+	std::cout << "=========================================" << std::endl;
+}
+
 
 int main()
 {
 	std::cout << "Start" << std::endl;
+	CallGameWithCheating();
 	CallGameWithObjects();
 	CallGameWithPointers();
 	CallGameWithSmartPointers();
+	
 	std::cout << "End" << std::endl;
     return 0;
 }
