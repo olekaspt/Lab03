@@ -7,10 +7,10 @@
 
 GameWithSmartPointers::GameWithSmartPointers()
 {
-    m_p1 = std::make_shared<PersonWithSmartPointers>("Huey 1");
-    m_p2 = std::make_shared<PersonWithSmartPointers>("Louie 2");
-    m_p3 = std::make_shared<PersonWithSmartPointers>("Dewey 3");
-    m_deck = std::make_shared<DeckWithSmartPointers> ();
+    m_p1 = std::make_unique<PersonWithSmartPointers>("Huey 1");
+    m_p2 = std::make_unique<PersonWithSmartPointers>("Louie 2");
+    m_p3 = std::make_unique<PersonWithSmartPointers>("Dewey 3");
+    m_deck = std::make_unique<DeckWithSmartPointers> ();
 }
 
 GameWithSmartPointers::~GameWithSmartPointers()
