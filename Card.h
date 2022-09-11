@@ -16,8 +16,8 @@ class Card
 		int GetSuit() const ;
 		int GetGuid() const ;
 
-		Card(Card && obj); // Move constructor
-		Card& operator=(Card&& obj); // Move assignment operator
+		Card(Card && obj) noexcept; // Move constructor
+		Card& operator=(Card&& obj) noexcept; // Move assignment operator
 
 
 	private:

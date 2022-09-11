@@ -16,5 +16,5 @@ class DeckWithObjects
     private:
 
         std::list<Card> m_deck;
-        
+
 };

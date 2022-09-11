@@ -31,13 +31,13 @@ Card& Card::operator=(const Card& c)
     return *this;
 }
 
-Card::Card(Card&& obj)
+Card::Card(Card&& obj) noexcept
 {
     std::cout << "    Calling Move Constructor" << std::endl;
     *this = std::move(obj);
 }
 
-Card& Card::operator=(Card&& obj)
+Card& Card::operator=(Card&& obj) noexcept
 {
     std::cout << "    Calling Move Assignment Operator" << std::endl;
     this->m_value = std::move(obj.m_value);

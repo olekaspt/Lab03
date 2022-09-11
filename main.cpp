@@ -53,10 +53,10 @@ void CallGameWithCheating()
 int main()
 {
 	std::cout << "Start" << std::endl;
-	CallGameWithCheating();
+	//CallGameWithCheating();
 	CallGameWithObjects();
-	CallGameWithPointers();
-	CallGameWithSmartPointers();
+	//CallGameWithPointers();
+	//CallGameWithSmartPointers();
 	
 	std::cout << "End" << std::endl;
     return 0;

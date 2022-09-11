@@ -53,11 +53,10 @@ Card PersonWithObjects::RemoveCardFromHand()
 
 void PersonWithObjects::PrintOutHand()
 {
-    auto it1queue = std::make_move_iterator(m_listOfCards.begin());
-    auto it1queue_end = std::make_move_iterator(m_listOfCards.end());
-    for (int i = 0; it1queue != it1queue_end; it1queue++)
+    for (auto it = m_listOfCards.begin(); it != m_listOfCards.end(); it++)
     {
-        std::cout << it1queue->GetSuit() << " " <<  it1queue->GetValue() << " " << it1queue->GetGuid() << " "<< std::endl;
+        std::cout << (*it).GetSuit() << " " << (*it).GetValue() << " " << (*it).GetGuid()<< std::endl;
     }
     std::cout << std::endl;
+
 }
