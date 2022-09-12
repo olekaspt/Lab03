@@ -1,7 +1,7 @@
 # Lab03
 
 ## Objective:
-The objective of this Lab is to memory management.
+The objective of this Lab is to understand memory management approaches and implications those approaches.
 
 This game implementation is trying to avoid the copy constructor being called on the Card class, as that could be akin to cheating.   In industry it could be that to create a new instance of a class is expensive, and the copy constructor is also expensive as well.
 
