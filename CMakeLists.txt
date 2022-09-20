@@ -7,7 +7,7 @@ find_package(Threads REQUIRED)
 include_directories(${GTEST_INCLUDE_DIRS})
 add_compile_options(-std=c++17)  
  
-add_library (applibrary SHARED Card.cpp DeckWithObjects.cpp       GameWithObjects.cpp       PersonWithObjects.cpp DeckWithPointers.cpp      GameWithPointers.cpp      PersonWithPointers.cpp DeckWithSmartPointers.cpp GameWithSmartPointers.cpp PersonWithSmartPointers.cpp)
+add_library (applibrary SHARED Card.cpp DeckWithObjects.cpp  GameWithObjects.cpp       PersonWithObjects.cpp DeckWithPointers.cpp      GameWithPointers.cpp      PersonWithPointers.cpp DeckWithSmartPointers.cpp GameWithSmartPointers.cpp PersonWithSmartPointers.cpp)
  
 # Link runTests with what we want to test and the GTest and pthread library
 add_executable(runTests tests.cpp)
