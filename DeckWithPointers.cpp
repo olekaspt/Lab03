@@ -8,7 +8,7 @@ DeckWithPointers::DeckWithPointers()
 {
     // For demo purposes reducing number of cards
     //for(int i = 1 ; i <=13; i++)
-    for(int i = 1 ; i <=3; i++)
+    for(int i = 0 ; i <=3; i++)
     {
         this->m_deck.push_back(new Card(i,0));
         this->m_deck.push_back(new Card(i,1));
@@ -49,17 +49,17 @@ Card * DeckWithPointers::DrawCard()
     return retVal;
 }
 
-void DeckWithPointers::ReturnCard(Card * c)
+bool DeckWithPointers::ReturnCard(Card * c)
 {
     if(c != nullptr)
     {
         m_deck.push_back(c);
-        return;
+        return true;
     }
     else
     {
         throw "Attempting to add a nullptr in DeckWithPointers::ReturnCard";
     }
-
+    return false;
 }
 

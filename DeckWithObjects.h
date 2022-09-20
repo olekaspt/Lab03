@@ -9,7 +9,7 @@ class DeckWithObjects
         virtual ~DeckWithObjects();
 
         Card DrawCard();
-        void ReturnCard(Card c);
+        bool ReturnCard(Card c);
 
         void PrintDeck();
 

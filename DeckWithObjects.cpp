@@ -6,7 +6,7 @@ DeckWithObjects::DeckWithObjects()
 {
     // For demo purposes reducing number of cards
     // for(int i = 1 ; i <=13; i++)
-    for(int i = 1 ; i <=3; i++)
+    for(int i = 0 ; i <=3; i++)
     {
         this->m_deck.push_back(std::move(Card(i,0)));
         this->m_deck.push_back(std::move(Card(i,1)));
@@ -35,9 +35,10 @@ Card DeckWithObjects::DrawCard()
 
 }
 
-void DeckWithObjects::ReturnCard(Card c)
+bool DeckWithObjects::ReturnCard(Card c)
 {
     m_deck.push_back(std::move(c));
+    return true;
 }
 
 void DeckWithObjects::PrintDeck()
@@ -47,6 +48,6 @@ void DeckWithObjects::PrintDeck()
     {
         std::cout << (*it).GetSuit() << " " << (*it).GetValue() << " " << (*it).GetGuid()<< std::endl;
     }
-    std::cout << std::endl;
+    std::cout << std::endl; 
 
 }

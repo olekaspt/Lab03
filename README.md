@@ -9,7 +9,9 @@ This game implementation is trying to avoid the copy constructor being called on
 
 ## Task 0: Evaluate initial starter implementation, to decide which implementation to choose from.
 
-Pick RAII and std::move, dumb pointers, or smart pointers.   Compare and contrast the approaches towards managing the memory.
+YOu will be doing RAII and std::move, and then either dumb pointers or smart pointers.   
+
+Compare and contrast the approaches towards managing the memory.
 
 Run the code in the debugger to be able to help explain the difference if needed.
 
@@ -31,9 +33,10 @@ The rules are:
 5.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the community pile and then player  goes.
 6.	A player may choose to discard all of their cards to the bottom of the community pile and start with 5 new cards at the beginning of their turn.  This action ends their turn without them getting a chance to draw a 6th card or discard any cards to their stack.
 7.	The game is played with a standard playing card deck (Ace = 1, Jack = 11, Queen =12, King = 13).  The suits are not important for the purposes of determining rule 3 (i.e. a 4 of any suit can go on top of a 3 of any suit).
+8. The Game ends when someone has a stack with 13 cards in it.
 
 ## Task 2  Create a Unit Test library to test the classes you implemented. 
-Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
+Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests) per implementation.  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
 
 Complete this before moving on to task 3.
  

@@ -25,10 +25,11 @@ PersonWithPointers::~PersonWithPointers()
     m_listOfCards.clear();
 }
 
-void PersonWithPointers::AddCardToHand( Card * c)  
+bool PersonWithPointers::AddCardToHand( Card * c)  
 {
     std::cout<<"   AddCardToHandPointer :"<<c->GetValue()<<" "<<c->GetSuit()<<" "<<c->GetGuid()<<std::endl;
     m_listOfCards.push_front(c);
+    return true;
 }
 
 Card * PersonWithPointers::RemoveCardFromHand()

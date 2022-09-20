@@ -21,10 +21,11 @@ PersonWithSmartPointers::~PersonWithSmartPointers()
     
 }
 
-void PersonWithSmartPointers::AddCardToHand(std::shared_ptr<Card> c)  
+bool PersonWithSmartPointers::AddCardToHand(std::shared_ptr<Card> c)  
 {
     std::cout<<"   AddCardToHandPointer :"<<c->GetValue()<<" "<<c->GetSuit()<<" "<<c->GetGuid()<<std::endl;
     m_listOfCards.push_front(c);
+    return true;
 }
 
 

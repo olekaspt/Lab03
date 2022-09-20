@@ -32,16 +32,18 @@ std::string PersonWithObjects::GetName() const
     return m_name;
 }
 
-void PersonWithObjects::AddCardToHand( Card  c)
+bool PersonWithObjects::AddCardToHand( Card  c)
 {
     std::cout<<"   AddCardToHandObject :"<<c.GetValue()<<" "<<c.GetSuit() << " " << c.GetGuid() << std::endl;
     m_listOfCards.push_front(std::move(c));
+    return true;
 }
 
-void PersonWithObjects::AddCardToHand(Card & c)
+bool PersonWithObjects::AddCardToHand(Card & c)
 {
     std::cout << "   AddCardToHandObject (by ref) :" << c.GetValue() << " " << c.GetSuit() << " " << c.GetGuid() << std::endl;
     m_listOfCards.push_front(std::move(c));
+    return true;
 }
 
 Card PersonWithObjects::RemoveCardFromHand()

@@ -20,8 +20,8 @@ public:
 
 	virtual ~PersonWithObjects();
 
-	void AddCardToHand(Card  c);
-	void AddCardToHand(Card& c);
+	bool AddCardToHand(Card  c);
+	bool AddCardToHand(Card& c);
 	Card RemoveCardFromHand();
 	void PrintOutHand();
 

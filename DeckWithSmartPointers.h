@@ -12,7 +12,7 @@ class DeckWithSmartPointers
         virtual ~DeckWithSmartPointers();
 
         std::shared_ptr<Card> DrawCard();
-        void ReturnCard(std::shared_ptr<Card> c);
+        bool ReturnCard(std::shared_ptr<Card> c);
 
         void PrintDeck();
 

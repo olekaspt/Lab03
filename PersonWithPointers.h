@@ -19,7 +19,7 @@ public:
 
 	virtual ~PersonWithPointers();
 
-	void AddCardToHand( Card * c);
+	bool AddCardToHand( Card * c);
 	Card * RemoveCardFromHand();
 	void PrintOutHand();
 

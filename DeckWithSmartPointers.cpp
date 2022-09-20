@@ -9,7 +9,7 @@ DeckWithSmartPointers::DeckWithSmartPointers()
 
     // For demo purposes reducing number of cards
     //for(int i = 1 ; i <=13; i++)
-    for(int i = 1 ; i <=3; i++)
+    for(int i = 0 ; i <=3; i++)
     {
         this->m_deck.push_back(std::make_shared<Card>(i,0));
         this->m_deck.push_back(std::make_shared<Card>(i,1));
@@ -36,18 +36,18 @@ std::shared_ptr<Card> DeckWithSmartPointers::DrawCard()
     return retVal;
 }
 
-void DeckWithSmartPointers::ReturnCard(std::shared_ptr<Card> c)
+bool DeckWithSmartPointers::ReturnCard(std::shared_ptr<Card> c)
 {
     if(c != nullptr)
     {
         m_deck.push_back(c);
-        return;
+        return true;
     }
     else
     {
         throw "Attempting to add a nullptr in DeckWithSmartPointers::ReturnCard";
     }
-
+    return false;
 }
 
 void DeckWithSmartPointers::PrintDeck()

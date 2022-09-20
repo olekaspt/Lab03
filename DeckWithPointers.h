@@ -12,7 +12,7 @@ class DeckWithPointers
         virtual ~DeckWithPointers();
 
         Card * DrawCard();
-        void ReturnCard(Card * c);
+        bool ReturnCard(Card * c);
 
         void PrintDeck();
 
