@@ -7,7 +7,6 @@
 DeckWithSmartPointers::DeckWithSmartPointers()
 {
 
-    //for(int i = 1 ; i <=13; i++)
     for(int i = 0 ; i <=3; i++)
     {
         this->m_deck.push_back(std::make_shared<Card>(i,0));
