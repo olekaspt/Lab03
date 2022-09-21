@@ -15,11 +15,15 @@ GameWithObjects::~GameWithObjects()
 
 void GameWithObjects::CheatingAdd(Card c)
 {
-
+    // Blah blah
 }
+
+
 
 void GameWithObjects::RunCheatGame()
 {
+    // pointless comment
+
     Card card1Object = Card(11,1);
 
     CheatingAdd(card1Object);
