@@ -16,6 +16,7 @@ GameWithObjects::~GameWithObjects()
 void GameWithObjects::CheatingAdd(Card c)
 {
     // Blah blah
+    std::cout<<"I am cheating"<<std::endl;	
 }
 
 
