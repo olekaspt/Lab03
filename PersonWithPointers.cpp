@@ -32,12 +32,17 @@ bool PersonWithPointers::AddCardToHand( Card * c)
     return true;
 }
 
-Card * PersonWithPointers::RemoveCardFromHand()
+Card * PersonWithPointers::RemoveCardFromHand(int i)
 {
-    Card * retVal = m_listOfCards.front();
-    m_listOfCards.pop_front();
+    auto it = m_listOfCards.begin();
+    if(i < 0 ||  i +1 > m_listOfCards.size())
+    {
+        throw "Position doesn't exist in hand";
+    }
+    advance(it, i);
+    Card * retVal = *it;
+    m_listOfCards.erase(it);
     return retVal;
-
 }
 
 void PersonWithPointers::PrintOutHand()

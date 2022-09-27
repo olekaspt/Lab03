@@ -3,6 +3,7 @@
 #include "Card.h"
 #include <string>
 #include <list>
+#include <vector>
 
 class PersonWithObjects
 {
@@ -11,9 +12,9 @@ public:
 
 	PersonWithObjects() = delete;
 
-	PersonWithObjects(const PersonWithObjects &p);
+	PersonWithObjects(const PersonWithObjects &p) ;
 
-	PersonWithObjects(PersonWithObjects && obj);
+	PersonWithObjects(PersonWithObjects && obj) noexcept;
 
 
 	std::string GetName() const;
@@ -22,7 +23,7 @@ public:
 
 	bool AddCardToHand(Card  c);
 	bool AddCardToHand(Card& c);
-	Card RemoveCardFromHand();
+	Card RemoveCardFromHand(int i);
 	void PrintOutHand();
 
     private: 

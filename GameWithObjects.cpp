@@ -67,11 +67,11 @@ void GameWithObjects::RunGame()
     std::cout << "PrintDeck" << std::endl;
     m_deck.PrintDeck();
 
-    m_deck.ReturnCard(std::move(m_p1.RemoveCardFromHand()));
-    m_deck.ReturnCard(std::move(m_p1.RemoveCardFromHand()));
+    m_deck.ReturnCard(std::move(m_p1.RemoveCardFromHand(2)));
+    m_deck.ReturnCard(std::move(m_p1.RemoveCardFromHand(1)));
 
-    m_deck.ReturnCard(std::move(m_p2.RemoveCardFromHand()));
-    m_deck.ReturnCard(std::move(m_p3.RemoveCardFromHand()));
+    m_deck.ReturnCard(std::move(m_p2.RemoveCardFromHand(0)));
+    m_deck.ReturnCard(std::move(m_p3.RemoveCardFromHand(1)));
 
     std::cout << "PrintDeck" << std::endl;
     m_deck.PrintDeck();

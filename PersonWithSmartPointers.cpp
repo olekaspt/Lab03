@@ -30,10 +30,16 @@ bool PersonWithSmartPointers::AddCardToHand(std::shared_ptr<Card> c)
 
 
 
-std::shared_ptr<Card> PersonWithSmartPointers::RemoveCardFromHand()  
+std::shared_ptr<Card> PersonWithSmartPointers::RemoveCardFromHand(int i)  
 {
-    std::shared_ptr<Card> retVal = m_listOfCards.front();
-    m_listOfCards.pop_front();
+    auto it = m_listOfCards.begin();
+    if(i < 0 ||  i +1 > m_listOfCards.size())
+    {
+        throw "Position doesn't exist in hand";
+    }
+    advance(it, i);
+    std::shared_ptr<Card> retVal = *it;
+    m_listOfCards.erase(it);
     return retVal;
 }
 

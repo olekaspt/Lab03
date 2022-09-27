@@ -22,7 +22,7 @@ public:
 	virtual ~PersonWithSmartPointers();
 
 	bool AddCardToHand(std::shared_ptr<Card> c);
-	std::shared_ptr<Card> RemoveCardFromHand();
+	std::shared_ptr<Card> RemoveCardFromHand(int i);
 	void PrintOutHand();
 
     private: 

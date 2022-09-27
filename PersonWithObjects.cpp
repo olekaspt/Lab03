@@ -18,7 +18,7 @@ PersonWithObjects::PersonWithObjects( const PersonWithObjects &p)
     m_name = p.m_name;
 }
 
-PersonWithObjects::PersonWithObjects(PersonWithObjects && obj)
+PersonWithObjects::PersonWithObjects(PersonWithObjects && obj) noexcept
 {
     std::cout <<"    Calling Person Move Constructor"<<std::endl;
     this->m_name = std::move(obj.m_name);
@@ -46,10 +46,16 @@ bool PersonWithObjects::AddCardToHand(Card & c)
     return true;
 }
 
-Card PersonWithObjects::RemoveCardFromHand()
+Card PersonWithObjects::RemoveCardFromHand(int i)
 {
-    Card c = std::move(m_listOfCards.front());
-    m_listOfCards.pop_front();
+    auto it = m_listOfCards.begin();
+    if(i < 0 ||  i +1 > m_listOfCards.size())
+    {
+        throw "Position doesn't exist in hand";
+    }
+    advance(it, i);
+    Card c = std::move(*it);
+    m_listOfCards.erase(it);
     return std::move(c);
 }
 

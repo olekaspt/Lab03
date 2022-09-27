@@ -20,7 +20,7 @@ public:
 	virtual ~PersonWithPointers();
 
 	bool AddCardToHand( Card * c);
-	Card * RemoveCardFromHand();
+	Card * RemoveCardFromHand(int i);
 	void PrintOutHand();
 
 
