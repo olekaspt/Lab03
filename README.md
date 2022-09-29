@@ -28,7 +28,7 @@ This will mean you need to modify the CMakeLists.txt file.
 The rules are:
 1.	Each player must end their turn with 5 or fewer cards in their hand.
 2.	At the start of their turn, they must draw a card from the top of the community pile of cards 
-3.	The player then tries to make a stack from their hand in order from 1 to 13 during their turn.  
+3.	The player then tries to make a stack from their hand in order from 1 to 13 during their turn.  (think solitiare like, first place the ace, then the two, and then three.  Except we don't care about the suit).
 4.	During their turn, the player may draw additional cards from the top of the pile so long as the total cards in their hand don’t exceed 6.
 5.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the community pile and then player  goes.
 6.	A player may choose to discard all of their cards to the bottom of the community pile and start with 5 new cards at the beginning of their turn.  This action ends their turn without them getting a chance to draw a 6th card or discard any cards to their stack.
