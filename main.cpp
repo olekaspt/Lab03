@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "GameWithPointers.h"
-#include "GameWithObjects.h"
-#include "GameWithSmartPointers.h"
+#include "Pointers/GameWithPointers.h"
+#include "Objects/GameWithObjects.h"
+#include "SmartPointers/GameWithSmartPointers.h"
 
 
 void CallGameWithObjects()

@@ -1,6 +1,9 @@
 // tests.cpp
 #include "Card.h"
-#include "PersonWithObjects.h"
+#include "Pointers/GameWithPointers.h"
+#include "Objects/GameWithObjects.h"
+#include "SmartPointers/GameWithSmartPointers.h"
+
 #include <gtest/gtest.h>
 
 
