@@ -16,9 +16,13 @@ class GameWithSmartPointers
 
 		void RunGame();
     private:
-        std::unique_ptr<PersonWithSmartPointers> m_p1;
-        std::unique_ptr<PersonWithSmartPointers> m_p2;
-        std::unique_ptr<PersonWithSmartPointers> m_p3;
+
+        void PlayerTakeTurn(std::shared_ptr<PersonWithSmartPointers> player);
+
+
+        std::shared_ptr<PersonWithSmartPointers> m_p1;
+        std::shared_ptr<PersonWithSmartPointers> m_p2;
+
         std::unique_ptr<DeckWithSmartPointers> m_deck;
         void PrintOutQueueOfPeople();
         void PrintOutStackOfPeople();

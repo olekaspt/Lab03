@@ -7,9 +7,8 @@
 
 GameWithSmartPointers::GameWithSmartPointers()
 {
-    m_p1 = std::make_unique<PersonWithSmartPointers>("Huey 1");
-    m_p2 = std::make_unique<PersonWithSmartPointers>("Louie 2");
-    m_p3 = std::make_unique<PersonWithSmartPointers>("Dewey 3");
+    m_p1 = std::make_shared<PersonWithSmartPointers>("Huey 1");
+    m_p2 = std::make_shared<PersonWithSmartPointers>("Louie 2");
     m_deck = std::make_unique<DeckWithSmartPointers> ();
 }
 
@@ -19,54 +18,43 @@ GameWithSmartPointers::~GameWithSmartPointers()
 
 }
 
-void GameWithSmartPointers::RunGame()
+void GameWithSmartPointers::PlayerTakeTurn(std::shared_ptr<PersonWithSmartPointers> player)
 {
-
-
-    std::shared_ptr<Card> card1Pointer = std::make_shared<Card> (1,1);
-    std::cout<<"Calling Smart Pointer Version"<<std::endl;
-    m_p1->AddCardToHand(card1Pointer);
-    std::cout<<"End Calling Smart Pointer Version"<<std::endl;
 
     std::cout<<"Start Drawing Cards"<<std::endl;
     std::cout<<"Drawing Cards 1"<<std::endl;
-    m_p1->AddCardToHand(m_deck->DrawCard());
+    player->AddCardToHand(m_deck->DrawCard());
     std::cout<<"Drawing Cards 2"<<std::endl;
-    m_p1->AddCardToHand(m_deck->DrawCard());
+    player->AddCardToHand(m_deck->DrawCard());
     std::cout<<"Drawing Cards 3"<<std::endl;
-    m_p2->AddCardToHand(m_deck->DrawCard());
+    player->AddCardToHand(m_deck->DrawCard());
     std::cout<<"Drawing Cards 4"<<std::endl;
-    m_p2->AddCardToHand(m_deck->DrawCard());
-    std::cout<<"Drawing Cards 5"<<std::endl;
-    m_p3->AddCardToHand(m_deck->DrawCard());
-    std::cout<<"Drawing Cards 6"<<std::endl;
-    m_p3->AddCardToHand(m_deck->DrawCard());
+    player->AddCardToHand(m_deck->DrawCard());
 
-    std::cout << "P1 Player::PrintOutHand" << std::endl;
-    m_p1->PrintOutHand();
-    std::cout << "P2 Player::PrintOutHand" << std::endl;
-    m_p2->PrintOutHand();
-    std::cout << "P4 Player::PrintOutHand" << std::endl;
-    m_p3->PrintOutHand();
-    std::cout << "End Player::PrintOutHand" << std::endl;
+    std::cout << "Player::PrintOutHand" << std::endl;
+    player->PrintOutHand();
 
-    std::cout << "PrintDeck" << std::endl;
-    m_deck->PrintDeck();
+    std::cout << "Returning Cards to Deck" << std::endl;
+    m_deck->ReturnCard(player->RemoveCardFromHand(2));
+    m_deck->ReturnCard(player->RemoveCardFromHand(1));
+    m_deck->ReturnCard(player->RemoveCardFromHand(0));
 
-    m_deck->ReturnCard(m_p1->RemoveCardFromHand(2));
-    m_deck->ReturnCard(m_p1->RemoveCardFromHand(1));
+    std::cout << "Player::PrintOutHand" << std::endl;
+    player->PrintOutHand();
 
-    m_deck->ReturnCard(m_p2->RemoveCardFromHand(0));
-    m_deck->ReturnCard(m_p3->RemoveCardFromHand(1));
+
+}
+
+void GameWithSmartPointers::RunGame()
+{
 
     std::cout << "PrintDeck" << std::endl;
     m_deck->PrintDeck();
-    std::cout << "P1 Player::PrintOutHand" << std::endl;
-    m_p1->PrintOutHand();
-    std::cout << "P2 Player::PrintOutHand" << std::endl;
-    m_p2->PrintOutHand();
-    std::cout << "P3 Player::PrintOutHand" << std::endl;
-    m_p3->PrintOutHand();
-    std::cout << "End Player::PrintOutHand" << std::endl;
+
+    PlayerTakeTurn(m_p1);
+
+    PlayerTakeTurn(m_p2);
+
+
 }
 

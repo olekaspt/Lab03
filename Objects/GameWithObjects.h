@@ -21,8 +21,10 @@ class GameWithObjects
 
 		void PrintOutStackOfPeople();
 
+		void PlayerTakeTurn(PersonWithObjects & player);
+
         PersonWithObjects m_p1;
         PersonWithObjects m_p2;
-        PersonWithObjects m_p3;
+
         DeckWithObjects m_deck;
 };
