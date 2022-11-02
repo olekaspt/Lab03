@@ -25,15 +25,27 @@ Run the code in the debugger to be able to help explain the difference if needed
 
 This will mean you need to modify the CMakeLists.txt file.  
 
-The rules are:
-1.	Each player must end their turn with 5 or fewer cards in their hand.
-2.	At the start of their turn, they must draw a card from the top of the community pile of cards 
-3.	The player then tries to make a stack from their hand in order from 1 to 13 during their turn.  (think solitiare like, first place the ace, then the two, and then three.  Except we don't care about the suit).
-4.	During their turn, the player may draw additional cards from the top of the pile so long as the total cards in their hand don’t exceed 6.
-5.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the community pile and then player  goes.
-6.	A player may choose to discard all of their cards to the bottom of the community pile and start with 5 new cards at the beginning of their turn.  This action ends their turn without them getting a chance to draw a 6th card or discard any cards to their stack.
-7.	The game is played with a standard playing card deck (Ace = 1, Jack = 11, Queen =12, King = 13).  The suits are not important for the purposes of determining rule 3 (i.e. a 4 of any suit can go on top of a 3 of any suit).
-8. The Game ends when someone has a stack with 13 cards in it.
+Objective: Be the first player to create a personal stack of cards numerically from Ace to King (1-13). Suits don’t matter!
+
+1.	Two Players 
+2.	Player 1 goes first
+3.	Each Player is dealt 5 cards from the Community Deck
+4.	Player checks their hand and begins creating a Personal Stack of cards starting with Ace (1) first round and following numerical order in subsequent rounds.
+	  If they do not have an Ace (or the topmost card’s following number), they have two options:
+               1. Draw a 6th card. If card is not needed, then discard (any choice) card to bottom of Community Pile. Turn ends.
+               2. Discard entire hand to bottom of Community Pile. Turn ends. Player begins next turn by drawing 5 new cards.
+	  If they have an Ace (or the topmost card’s following number):
+	              1. Begin stacking cards chronologically in Personal Stack with Ace (1) at the bottom. 
+	                 Player can continue drawing cards (but no more than 6 in hand) and stacking cards chronologically until they are no longer able to. 
+                  If they have 6 cards in hand, then they must discard 1 (choice) card to bottom of Community Pile. Turn ends.
+5.	Next Player’s turn begins at Step 4.
+6.	The first player to numerically build their Personal Stack from Ace-1 (bottom) –-> King-13 (top) wins!
+
+Note: It is possible to win the game in 1 turn. Example: Player stacks cards from 1 to 13 without ever exceeding the 6-card limit in hand.
+
+Note: Personal Stacks MUST be completed IN ORDER. Numbers cannot be skipped and returned to later. Example: If Player has a hand with 1,3,4,5,6, then they can ONLY  
+      place the 1 on the table and draw again. Their Personal Stack cannot continue to grow until they have a 2.
+
 
 ## Task 2  Create a Unit Test library to test the classes for the two implementations.
 Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests per each implementation).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
