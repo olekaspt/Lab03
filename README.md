@@ -23,17 +23,21 @@ Run the code in the debugger to be able to help explain the difference if needed
 
 ## Task 1:  Consider how to Implement a card game called 13 using chosen implementations.
 
-This will mean you need to modify the CMakeLists.txt file.  
-
+This will mean you need to modify the CMakeLists.txt file.
 The rules are:
-1.	Each player must end their turn with 5 or fewer cards in their hand.
-2.	At the start of their turn, they must draw a card from the top of the community pile of cards 
-3.	The player then tries to make a stack from their hand in order from 1 to 13 during their turn.  (think solitiare like, first place the ace, then the two, and then three.  Except we don't care about the suit).
-4.	During their turn, the player may draw additional cards from the top of the pile so long as the total cards in their hand don’t exceed 6.
-5.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the community pile and then player  goes.
-6.	A player may choose to discard all of their cards to the bottom of the community pile and start with 5 new cards at the beginning of their turn.  This action ends their turn without them getting a chance to draw a 6th card or discard any cards to their stack.
-7.	The game is played with a standard playing card deck (Ace = 1, Jack = 11, Queen =12, King = 13).  The suits are not important for the purposes of determining rule 3 (i.e. a 4 of any suit can go on top of a 3 of any suit).
-8. The Game ends when someone has a stack with 13 cards in it.
+1.	The game is played with at least two players, this is recommended, but at most four players.
+2.	The Game begins with every player has an empty stack and draws five cards on their first turn.
+3.	At the start of their turn, each player must draw a card from the top of the deck
+4.	Each player must end their turn with 5 or fewer cards in their hand.
+5.	The game is played with a standard playing card deck (Ace = 1, Jack = 11, Queen =12, King = 13). 
+6.	The player should create a stack from their hand of each unique card in order from 1 to 13. 
+7.	The Player can place different suit cards on each other in the stack.
+8.	The player may only add to the stack on their turn.
+9.	During their turn, the player may draw additional cards from the top of the pile until they have six cards
+10.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the deck.
+11.	A player may choose to discard their hand to the bottom of the deck and draw 5 new cards at the beginning of their turn. This action ends their turn without them getting a chance to draw a 6th card or add any cards to their stack.
+12.	The Game ends when someone completes their stack. That player is the victor.
+
 
 ## Task 2  Create a Unit Test library to test the classes for the two implementations.
 Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests per each implementation).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
