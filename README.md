@@ -22,18 +22,22 @@ Run the code in the debugger to be able to help explain the difference if needed
 
 
 ## Task 1:  Consider how to Implement a card game called 13 using chosen implementations.
+Updated "13" Gamerules:
+"13" Is played with a standard deck of players cards.
+The Objective of the game is to create a stack of 13 cards in numericle order:
+Ace(1),2,3,4,5,6,7,8,9,10,Jack(11),Queen(12),King(13) - Cards must be played in this order to win, suit is irrelevant.
 
-This will mean you need to modify the CMakeLists.txt file.  
+1. Each player starts the game by drawing a hand of 5 cards from the community pile. The maximum amount of cards
+you can have in one hand is 6, however, you can only end your turn while having five cards in hand. If they do
+have six cards and want to end their turn they may discard one of their cards and end their turn.
 
-The rules are:
-1.	Each player must end their turn with 5 or fewer cards in their hand.
-2.	At the start of their turn, they must draw a card from the top of the community pile of cards 
-3.	The player then tries to make a stack from their hand in order from 1 to 13 during their turn.  (think solitiare like, first place the ace, then the two, and then three.  Except we don't care about the suit).
-4.	During their turn, the player may draw additional cards from the top of the pile so long as the total cards in their hand don’t exceed 6.
-5.	When the player cannot place any more cards in their stack and they have 6 cards in their hand, they must discard 1 card to the bottom of the community pile and then player  goes.
-6.	A player may choose to discard all of their cards to the bottom of the community pile and start with 5 new cards at the beginning of their turn.  This action ends their turn without them getting a chance to draw a 6th card or discard any cards to their stack.
-7.	The game is played with a standard playing card deck (Ace = 1, Jack = 11, Queen =12, King = 13).  The suits are not important for the purposes of determining rule 3 (i.e. a 4 of any suit can go on top of a 3 of any suit).
-8. The Game ends when someone has a stack with 13 cards in it.
+2. At the start of a players turn they will play cards onto their stack in an attempt to form the win condition,
+they can draw as many cards during their turn as long as their hand does not exceed the 6 card limit.
+
+3. If a player desires, they may discard all their cards to the bottom of the community pile and recieve 5 new ones,
+this action ends the players turn and does not allow them to take anymore actions, such as drawing an additional card.
+
+4. The Game concludes when one player during their turn completes the stack of 13 cards.
 
 ## Task 2  Create a Unit Test library to test the classes for the two implementations.
 Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests per each implementation).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
