@@ -22,22 +22,20 @@ Run the code in the debugger to be able to help explain the difference if needed
 
 
 ## Task 1:  Consider how to Implement a card game called 13 using chosen implementations.
-Updated "13" Gamerules:
+
 "13" Is played with a standard deck of players cards.
 The Objective of the game is to create a stack of 13 cards in numericle order:
 Ace(1),2,3,4,5,6,7,8,9,10,Jack(11),Queen(12),King(13) - Cards must be played in this order to win, suit is irrelevant.
 
+1. There are only two players
 1. Each player starts the game by drawing a hand of 5 cards from the community pile. The maximum amount of cards
 you can have in one hand is 6, however, you can only end your turn while having five cards in hand. If they do
 have six cards and want to end their turn they may discard one of their cards and end their turn.
-
-2. At the start of a players turn they will play cards onto their stack in an attempt to form the win condition,
+1. At the start of a players turn they will play cards onto their stack in an attempt to form the win condition,
 they can draw as many cards during their turn as long as their hand does not exceed the 6 card limit.
-
-3. If a player desires, they may discard all their cards to the bottom of the community pile and recieve 5 new ones,
+1. If a player desires, they may discard all their cards to the bottom of the community pile and recieve 5 new ones,
 this action ends the players turn and does not allow them to take anymore actions, such as drawing an additional card.
-
-4. The Game concludes when one player during their turn completes the stack of 13 cards.
+1. The Game concludes when one player during their turn completes the stack of 13 cards.
 
 ## Task 2  Create a Unit Test library to test the classes for the two implementations.
 Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests per each implementation).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
