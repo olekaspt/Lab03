@@ -5,7 +5,7 @@
 DeckWithObjects::DeckWithObjects()
 {
 
-    for(int i = 0 ; i <=3; i++)
+    for(int i = 0 ; i <=2; i++)
     {
         this->m_deck.push_back(std::move(Card(i,0)));
         this->m_deck.push_back(std::move(Card(i,1)));
@@ -29,7 +29,7 @@ Card DeckWithObjects::DrawCard()
         return std::move(c);
     }
 
-    throw "Deck not empty";
+    throw "Deck is empty";
 
 
 }

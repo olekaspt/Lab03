@@ -7,8 +7,8 @@
 
 GameWithSmartPointers::GameWithSmartPointers()
 {
-    m_p1 = std::make_shared<PersonWithSmartPointers>("Huey 1");
-    m_p2 = std::make_shared<PersonWithSmartPointers>("Louie 2");
+    m_p1 = std::make_unique<PersonWithSmartPointers>("Huey 1");
+    m_p2 = std::make_unique<PersonWithSmartPointers>("Louie 2");
     m_deck = std::make_unique<DeckWithSmartPointers> ();
 }
 
@@ -18,7 +18,7 @@ GameWithSmartPointers::~GameWithSmartPointers()
 
 }
 
-void GameWithSmartPointers::PlayerTakeTurn(std::shared_ptr<PersonWithSmartPointers> player)
+void GameWithSmartPointers::PlayerTakeTurn(std::unique_ptr<PersonWithSmartPointers> &player)
 {
 
     std::cout<<"Start Drawing Cards"<<std::endl;

@@ -12,9 +12,9 @@ public:
 
 	PersonWithSmartPointers() = delete;
 
-	PersonWithSmartPointers( const PersonWithSmartPointers &p) = delete;
+	//PersonWithSmartPointers( const PersonWithSmartPointers &p) = delete;
 
-	PersonWithSmartPointers(PersonWithSmartPointers && obj) = delete;
+	//PersonWithSmartPointers(PersonWithSmartPointers && obj) = delete;
 
 
 	std::string GetName() const;

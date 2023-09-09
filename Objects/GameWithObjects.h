@@ -13,8 +13,7 @@ class GameWithObjects
 		virtual ~GameWithObjects();
 
 		void RunGame();
-		void RunCheatGame();
-		void CheatingAdd(Card c);
+
     private:
 
 		void PrintOutQueueOfPeople();

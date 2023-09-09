@@ -39,25 +39,67 @@ void CallGameWithSmartPointers()
 	std::cout << "=========================================" << std::endl;
 }
 
-void CallGameWithCheating()
+void CheatingAdd(Card c)
 {
-	std::cout << "=========================================" << std::endl;
-	std::cout << "GameWithSmartPointers constructed" << std::endl;
-	GameWithObjects game3;
-	std::cout << "Now Run Game" << std::endl;
-	game3.RunCheatGame();
-	std::cout << "=========================================" << std::endl;
+    // Blah blah
+    std::cout<<"I am cheating"<<std::endl;	
 }
 
+void NotCheatingAdd(Card &c)
+{
+    // Blah blah
+    std::cout<<"I am not cheating"<<std::endl;	
+}
+
+void RunCheatGame()
+{
+    Card card1Object = Card(11,1);
+
+    CheatingAdd(card1Object);
+    
+	NotCheatingAdd(card1Object);
+
+    std::cout<<std::endl<<std::endl;
+}
 
 int main()
 {
+	int pick = -1;
+	std::cout << "Pick which option to run."<< std::endl;
+	std::cout << "1 show cheating"<< std::endl;
+	std::cout << "2 RAII and Move operator"<< std::endl;
+	std::cout << "3 Dumb Pointers"<< std::endl;
+	std::cout << "4 Smart Pointers"<< std::endl;
+	std::cin >> pick;
+
+	if(pick < 1 || pick > 4)
+	{
+		std::cout <<"Error wrong pick"<<std::endl;
+	}
+
+
 	std::cout << "Start" << std::endl;
-	//CallGameWithCheating();
-	CallGameWithObjects();
-	//CallGameWithPointers();
-	//CallGameWithSmartPointers();
-	
+	if(pick == 1)
+	{
+		std::cout << "Calling CallGameWithCheating" << std::endl;
+		RunCheatGame();
+	}
+	else if (pick == 2)
+	{
+		std::cout << "Calling CallGameWithObjects" << std::endl;
+		CallGameWithObjects();
+	}
+	else if (pick == 3)
+	{
+		std::cout << "Calling CallGameWithPointers" << std::endl;
+		CallGameWithPointers();
+	}
+	else if (pick == 4)
+	{
+		std::cout << "Calling CallGameWithSmartPointers" << std::endl;
+		CallGameWithSmartPointers();
+	}
+
 	std::cout << "End" << std::endl;
     return 0;
 }

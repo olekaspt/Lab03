@@ -28,7 +28,7 @@ bool PersonWithSmartPointers::AddCardToHand(std::shared_ptr<Card> c)
     return true;
 }
 
-
+ 
 
 std::shared_ptr<Card> PersonWithSmartPointers::RemoveCardFromHand(int i)  
 {

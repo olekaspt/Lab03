@@ -13,12 +13,6 @@ GameWithObjects::~GameWithObjects()
     std::cout<<"GameWithObjects Destructor Called"<<std::endl;	
 }
 
-void GameWithObjects::CheatingAdd(Card c)
-{
-    // Blah blah
-    std::cout<<"I am cheating"<<std::endl;	
-}
-
 void GameWithObjects::PlayerTakeTurn(PersonWithObjects & player)
 {
     std::cout<<"Start Drawing Cards"<<std::endl;
@@ -41,19 +35,6 @@ void GameWithObjects::PlayerTakeTurn(PersonWithObjects & player)
 
     std::cout << "Player::PrintOutHand" << std::endl;
     player.PrintOutHand();
-}
-
-
-
-void GameWithObjects::RunCheatGame()
-{
-    // pointless comment
-
-    Card card1Object = Card(11,1);
-
-    CheatingAdd(card1Object);
-    std::cout<<"End Calling AddCardToHandObject"<<std::endl;
-    std::cout<<std::endl<<std::endl;
 }
 
 void GameWithObjects::RunGame()
