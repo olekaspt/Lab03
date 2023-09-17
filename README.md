@@ -1,5 +1,5 @@
 # Lab03
-
+See Code and Lab Report Standards - https://github.com/olekaspt/LabStandards
 ## Objective:
 The objective of this Lab is to understand memory management approaches and implications those approaches.
 
@@ -16,7 +16,7 @@ Compare and contrast the approaches towards managing the memory.
 ## Task 1: Answer questions from inspection of code.
 Run the code in the debugger to be able to help explain the differences.
 
-For the lab report answer the following questions.
+For the lab report answer the following questions:
 *	Explain the difference between the copy and move constructor. (https://www.geeksforgeeks.org/move-constructors-in-c-with-examples/)
 *	Explain why the unintentional calling of the copy constructor is bad (see the Cheating method as on example in main.cpp)
 *	Compare and contrast the destructors for the classes and approaches.  Which approach feels the one less prone to bugs?
@@ -30,14 +30,29 @@ The method in question for each version of the game - is XXXXX::PlayersSwapCards
 The goal is for player1 to give a card to player2.  And vice versa.
 
 
-## Task 2  Create a Unit Test library to test the classes for the two implementations.
-Write and have pass at least 3 tests per class (3 classes, so so min of 9 UnitTests per each implementation).  These tests do not have to be super complicated, but this is where you want to think about your corner cases.
+## Task 3  Design a series of classes that have ownwerhip relationship.  For the sandbox example, I made a Game class, a PLayer class, and a Card class.  You will need to introduce these classes with their own header file and implementation file.  Each class will need to be in it's own header file and implementation file.  You can add this to the starter code shared library.
 
-Complete this before moving on to task 3.
+Your example should include at least 3 examples.  And at least one of the classes that owns other clases needs to have mutiple instances of it.  For example, there are two Persons representing players in game.  And the Person owns the cards in its hand.
+
+For you classes, you will need to define the following:
+1. Constructor
+2. Copy Constructor
+3. Copy assignmnet operator
+4. Move constructor
+5. Move assignnment operator.
+
+Have the initializer's for your class setup the state.  I.e. in the game example, the players are created the deck is populated with cards.
+
+You can choose either dumb pointers, RAII and move operator, or smart pointer for this implementation.
+
+For the lab report answer the following questions:
+Explain the object ownership of you classes.
  
-## Task 3 Now provide implementation for the approachs you chose in Task 0 and implement the card game 13.
-Show screen shots of you two games with an initial hand, and a screen shot of the game ending with a player winning.  Do this for both implementations.
+## Task 4 Provide an unit test of setting up the top level object and properly destroy this object.
+You can choose either dumb pointers, RAII and move operator, or smart pointers for this test.  
 
+For the lab report answer the following questions:
+Explain your choice of dumb pointers, RAII and move operator, or Smart pointers.  Why did you choose this implemetation.
 
 # Lab Submission
 1.	Write a PDF that has the screenshots or written sections asked for in the Tasks (if applicable)
