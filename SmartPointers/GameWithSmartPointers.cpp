@@ -45,6 +45,11 @@ void GameWithSmartPointers::PlayerTakeTurn(std::unique_ptr<PersonWithSmartPointe
 
 }
 
+void GameWithSmartPointers::PlayersSwapCards()
+{
+    // TODO
+}
+
 void GameWithSmartPointers::RunGame()
 {
 
@@ -55,6 +60,6 @@ void GameWithSmartPointers::RunGame()
 
     PlayerTakeTurn(m_p2);
 
-
+    PlayersSwapCards();
 }
 

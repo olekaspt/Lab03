@@ -37,6 +37,13 @@ void GameWithObjects::PlayerTakeTurn(PersonWithObjects & player)
     player.PrintOutHand();
 }
 
+void GameWithObjects::PlayersSwapCards()
+{
+    // TODO 
+
+
+}
+
 void GameWithObjects::RunGame()
 {
 
@@ -46,6 +53,8 @@ void GameWithObjects::RunGame()
     PlayerTakeTurn(m_p1);
 
     PlayerTakeTurn(m_p2);
+
+    PlayersSwapCards();
 
 }
 

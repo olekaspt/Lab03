@@ -45,6 +45,10 @@ void GameWithPointers::PlayerTakeTurn(PersonWithPointers* player)
     player->PrintOutHand();
 }
 
+void GameWithPointers::PlayersSwapCards()
+{
+}
+
 void GameWithPointers::RunGame()
 {
     std::cout << "PrintDeck" << std::endl;
@@ -53,6 +57,8 @@ void GameWithPointers::RunGame()
     PlayerTakeTurn(m_p1);
 
     PlayerTakeTurn(m_p2);
+
+    PlayersSwapCards();
 
 }
 

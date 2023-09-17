@@ -21,6 +21,7 @@ class GameWithObjects
 		void PrintOutStackOfPeople();
 
 		void PlayerTakeTurn(PersonWithObjects & player);
+		void PlayersSwapCards();
 
         PersonWithObjects m_p1;
         PersonWithObjects m_p2;

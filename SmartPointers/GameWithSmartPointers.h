@@ -18,7 +18,7 @@ class GameWithSmartPointers
     private:
 
         void PlayerTakeTurn(std::unique_ptr<PersonWithSmartPointers> & player);
-
+        void PlayersSwapCards();
 
         std::unique_ptr<PersonWithSmartPointers> m_p1;
         std::unique_ptr<PersonWithSmartPointers> m_p2;
