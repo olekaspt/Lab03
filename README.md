@@ -9,6 +9,8 @@ This game implementation is trying to avoid the copy constructor being called on
 
 ## Task 0: Evaluate sample implementation, to understand the three approaches to memory allocation.  You will be required to implement a method on each of the implementations to transfer a card from on player to another player.
 
+git clone https://github.com/olekaspt/Lab03.git
+
 YOu will be doing RAII and std::move, dumb pointers, and smart pointers.   
 
 Compare and contrast the approaches towards managing the memory.
