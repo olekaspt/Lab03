@@ -29,7 +29,7 @@ For the lab report answer the following questions:
 
 The method in question for each version of the game - is XXXXX::PlayersSwapCards()
 
-The goal is for player1 to give a card to player2.  And vice versa.
+The goal is for player1 to give a card to player2.  And vice versa.  Any card will do, and you can pass the same card back and forth.
 
 
 ## Task 3  Design a series of classes that have ownwerhip relationship.  For the sandbox example, I made a Game class, a PLayer class, and a Card class.  You will need to introduce these classes with their own header file and implementation file.  Each class will need to be in it's own header file and implementation file.  You can add this to the starter code shared library.
