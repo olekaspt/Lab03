@@ -1,5 +1,8 @@
 # Lab03
-See Code and Lab Report Standards - https://github.com/olekaspt/LabStandards
+
+Must follow standards cited here:
+https://github.com/olekaspt/LabStandards/blob/main/README.md
+
 ## Objective:
 The objective of this Lab is to understand memory management approaches and implications those approaches.
 
